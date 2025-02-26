@@ -19,33 +19,25 @@
         "test_name": "test_03",
         "input_text": "Prescribed 500mg Metformin once daily",
         "target_profile": "medicationrequest",
-        "prompt": "Generate a US Core FHIR MedicationRequest resource based on the provided text.",
+        "prompt": "Generate a US CoreFHIR MedicationRequest resource based on the provided text.",
         "expected_resource_type": "MedicationRequest",
-        "expected_codes": ["861332"]
-    },
-    {
-        "test_name": "test_04",
-        "input_text": "Blood pressure reading: 120/80 mmHg",
-        "target_profile": "vital-signs",
-        "prompt": "Generate a US Core FHIR Vital Signs resource based on the provided text.",
-        "expected_resource_type": "Observation",
-        "expected_codes": []
+        "expected_codes": ["861007"]
     },
     {
         "test_name": "test_06",
         "input_text": "MRI scan of the brain performed",
         "target_profile": "procedure",
-        "prompt": "Generate a US Core FHIR Procedure resource based on the provided text.",
+        "prompt": "Generate a US CoreFHIR Procedure resource based on the provided text.",
         "expected_resource_type": "Procedure",
-        "expected_codes": ["70551"]
+        "expected_codes": []
     },
     {
         "test_name": "test_08",
         "input_text": "Hospitalized for pneumonia",
         "target_profile": "encounter",
-        "prompt": "Generate a US Core FHIR Encounter resource based on the provided text.",
+        "prompt": "Generate a US CoreFHIR Encounter resource based on the provided text.",
         "expected_resource_type": "Encounter",
-        "expected_codes": ["J18.9"]
+        "expected_codes": ["233604007"]
     },
     {
         "test_name": "test_10",
@@ -53,6 +45,6 @@
         "target_profile": "simple-observation",
         "prompt": "Generate a US Core FHIR Simple Observation resource based on the provided text.",
         "expected_resource_type": "Observation",
-        "expected_codes": ["2093-3"]
+        "expected_codes": ["5932-9"]
     }
 ]

@@ -3,6 +3,8 @@ import requests
 import os
 from dotenv import load_dotenv
 import base64
+from openai import OpenAI
+from anthropic import Anthropic
 
 # Load environment variables from secrets.env
 load_dotenv('secrets.env')
@@ -13,13 +15,13 @@ MEDPLUM_OAUTH_TOKEN_URL_ = "http://localhost:8103/oauth2/token"
 
 LLM_APIS = {
     "lang2FHIR": "https://experiment.pheno.ml/lang2fhir/create",
-    # "OpenAI": "https://api.openai.com/v1/completions",
-    # "Claude": "https://api.anthropic.com/v1/messages",
+    "OpenAI": "https://api.openai.com/v1/completions",
+    "Claude": "https://api.anthropic.com/v1/messages",
     "Gemini": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" + os.getenv('GEMINI_API_KEY')
 }
 
 # Load Test Cases from JSON
-with open("tests.json", "r") as f:
+with open("tests01.json", "r") as f:
     test_cases = json.load(f)
 
 # Medplum auth
@@ -88,6 +90,41 @@ def call_phenoml_api(resource, input_text):
     response.raise_for_status()
     return response.json()
 
+def call_openai_api(prompt, input_text):
+    client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+    # Add explicit JSON request to the prompt
+    json_prompt = f"{prompt}\n\nPlease respond with a valid FHIR resource in JSON format.\n\n{input_text}"
+    completion = client.chat.completions.create(
+        model="gpt-4o",
+        response_format={"type": "json_object"},
+        messages=[
+            {"role": "user", "content": json_prompt}
+        ]
+    )
+    response_text = completion.choices[0].message.content
+    try:
+        return json.loads(response_text)
+    except json.JSONDecodeError:
+        print(f"Failed to parse JSON from OpenAI response: {response_text}")
+        return {"resourceType": "Unknown"}
+
+
+def call_claude_api(prompt, input_text):
+    client = Anthropic(api_key=os.getenv('CLAUDE_API_KEY'))
+    json_prompt = f"{prompt}\n\nPlease respond with a valid FHIR resource in JSON format.\n\n{input_text}"
+    completion = client.messages.create(
+        max_tokens=4096,
+        model="claude-3-5-sonnet-20241022",
+        messages=[{"role": "user", "content": json_prompt}]
+    )
+    try:
+        # Extract the text content and parse it as JSON
+        response_text = completion.content[0].text
+        return json.loads(response_text)
+    except (json.JSONDecodeError, AttributeError, IndexError) as e:
+        print(f"Failed to parse JSON from Claude response: {e}")
+        return {"resourceType": "Unknown"}
+
 # Function to Validate FHIR Resources
 def validate_fhir(resource):
     """Validates a FHIR resource using Medplum's $validate operation."""
@@ -102,44 +139,42 @@ def validate_fhir(resource):
     response = requests.post(url, headers=headers, json=resource)
     return response.json()
 
-# Function to Generate FHIR Resource using Different APIs
-# def generate_fhir(resource, prompt, input_text, model):
-#     """Generates a FHIR resource using the specified API."""
-#     api_url = LLM_APIS[model]  # This is already a string, no need to index into it
-#     phenoml_headers = {"Authorization": f"Bearer {get_phenoml_token()}"}
-
-#     if model == "lang2FHIR":
-#         response = call_phenoml_api(resource, input_text)
-#     # elif model == "OpenAI":
-#     #     response = requests.post(api_url, json={"prompt": input_text, "model": "gpt-4"}, headers=headers)
-#     # elif model == "Claude":
-#     #     response = requests.post(api_url, json={"prompt": input_text, "model": "claude-2"}, headers=headers)
-#     elif model == "Gemini":
-#         full_text = prompt + "\n\n" + input_text
-#         response = requests.post(api_url, json={"contents": [{"parts": [{"text": full_text}]}]})
-#     else:
-#         raise ValueError("Unsupported model")
-    
-#     return response
-
 def generate_fhir(resource, prompt, input_text, model):
     """Generates a FHIR resource using the specified API."""
     api_url = LLM_APIS[model]  # Retrieve API URL as a string
-    phenoml_headers = {"Authorization": f"Bearer {get_phenoml_token()}"}
 
     if model == "lang2FHIR":
         response = call_phenoml_api(resource, input_text)  # This already returns JSON
     elif model == "Gemini":
         full_text = prompt + "\n\n" + input_text
-        response = requests.post(api_url, json={"contents": [{"parts": [{"text": full_text}]}]})
+        response = requests.post(api_url, json={"contents": [{"parts": [{"text": full_text}]}],"generationConfig": { "response_mime_type": "application/json" }})
         response.raise_for_status()  # Ensure we catch HTTP errors
         response = response.json()  # Convert Response object to JSON
+    elif model == "OpenAI":
+        response = call_openai_api(prompt, input_text)
+    elif model == "Claude":
+        response = call_claude_api(prompt, input_text)
     else:
         raise ValueError("Unsupported model")
 
     return response  # Always return a dictionary
 
-
+def extract_codes_from_resource(resource):
+    """Extracts codes from 'code' field and any field ending with 'CodeableConcept' in the resource."""
+    codes = set()
+    
+    # Check for 'code' field
+    if "code" in resource and isinstance(resource["code"], dict):
+        codings = resource["code"].get("coding", [])
+        codes.update(coding["code"] for coding in codings if "code" in coding)
+    
+    # Check for any field ending with 'CodeableConcept'
+    for field, value in resource.items():
+        if field.endswith("CodeableConcept") and isinstance(value, dict):
+            codings = value.get("coding", [])
+            codes.update(coding["code"] for coding in codings if "code" in coding)
+    
+    return codes
 
 def is_fhir_valid(validation_result):
     """Checks if FHIR resource validation has only error-level issues."""
@@ -173,9 +208,7 @@ for test in test_cases:
         correct_type = generated_fhir.get("resourceType", "Unknown") == expected_resource_type
         
         # Check expected codes
-        generated_codes = set(
-            coding["code"] for coding in generated_fhir.get("code", {}).get("coding", [])
-        )
+        generated_codes = extract_codes_from_resource(generated_fhir)
         codes_match = expected_codes == generated_codes
         
         # Store results
@@ -185,6 +218,8 @@ for test in test_cases:
             "valid_fhir": is_valid,
             "correct_resource_type": correct_type,
             "codes_match": codes_match,
+            "expected_codes": list(expected_codes),  # Convert set to list for JSON serialization
+            "generated_codes": list(generated_codes),  # Convert set to list for JSON serialization
             "validation_issues": validation_result.get("issue", [])
         })
 
@@ -194,10 +229,13 @@ with open("benchmark_results.json", "w") as f:
 
 # Print Summary
 for result in results:
-    print(f"Test: {result['test_name']}, Model: {result['model']}")
+    print(f"\nTest: {result['test_name']}, Model: {result['model']}")
     print(f" - Valid FHIR: {result['valid_fhir']}")
     print(f" - Correct Resource Type: {result['correct_resource_type']}")
     print(f" - Codes Match: {result['codes_match']}")
+    print(f" - Expected codes: {set(result['expected_codes'])}")
+    print(f" - Generated codes: {set(result['generated_codes'])}")
+    
     if not result["valid_fhir"]:
         print(f" - Validation Issues: {result['validation_issues']}")
     print()
