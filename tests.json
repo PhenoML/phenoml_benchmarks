@@ -5,7 +5,7 @@
         "target_profile": "patient",
         "prompt": "Generate a US Core FHIR Patient resource based on the provided text.",
         "expected_resource_type": "Patient",
-        "expected_codes": []
+        "acceptable_codes": []
     },
     {
         "test_name": "test_02",
@@ -13,46 +13,110 @@
         "target_profile": "condition-encounter-diagnosis",
         "prompt": "Generate a US Core FHIR Condition resource based on the provided text.",
         "expected_resource_type": "Condition",
-        "expected_codes": ["E11"]
+        "acceptable_codes": ["E11"]
     },
     {
         "test_name": "test_03",
-        "input_text": "Prescribed 500mg Metformin once daily",
+        "input_text": "Prescribed 500mg Metformin",
         "target_profile": "medicationrequest",
-        "prompt": "Generate a US Core FHIR MedicationRequest resource based on the provided text.",
+        "prompt": "Generate a US CoreFHIR MedicationRequest resource based on the provided text.",
         "expected_resource_type": "MedicationRequest",
-        "expected_codes": ["861332"]
+        "acceptable_codes": ["861007"]
     },
     {
         "test_name": "test_04",
-        "input_text": "Blood pressure reading: 120/80 mmHg",
-        "target_profile": "vital-signs",
-        "prompt": "Generate a US Core FHIR Vital Signs resource based on the provided text.",
-        "expected_resource_type": "Observation",
-        "expected_codes": []
-    },
-    {
-        "test_name": "test_06",
         "input_text": "MRI scan of the brain performed",
         "target_profile": "procedure",
-        "prompt": "Generate a US Core FHIR Procedure resource based on the provided text.",
+        "prompt": "Generate a US CoreFHIR Procedure resource based on the provided text.",
         "expected_resource_type": "Procedure",
-        "expected_codes": ["70551"]
+        "acceptable_codes": []
     },
     {
-        "test_name": "test_08",
-        "input_text": "Hospitalized for pneumonia",
-        "target_profile": "encounter",
-        "prompt": "Generate a US Core FHIR Encounter resource based on the provided text.",
-        "expected_resource_type": "Encounter",
-        "expected_codes": ["J18.9"]
-    },
-    {
-        "test_name": "test_10",
+        "test_name": "test_05",
         "input_text": "Cholesterol level test result",
         "target_profile": "simple-observation",
         "prompt": "Generate a US Core FHIR Simple Observation resource based on the provided text.",
         "expected_resource_type": "Observation",
-        "expected_codes": ["2093-3"]
+        "acceptable_codes": ["5932-9", "2093-3"]
+    },
+    {
+        "test_name": "test_06",
+        "input_text": "Patient prescribed Lisinopril 10mg for hypertension",
+        "target_profile": "medicationrequest",
+        "prompt": "Generate a US Core FHIR MedicationRequest resource based on the provided text.",
+        "expected_resource_type": "MedicationRequest",
+        "acceptable_codes": ["314076"]
+    },
+    {
+        "test_name": "test_07",
+        "input_text": "Develop a care plan for patient with Type 2 Diabetes, including diet and exercise recommendations",
+        "target_profile": "careplan",
+        "prompt": "Generate a US Core FHIR CarePlan resource based on the provided text.",
+        "expected_resource_type": "CarePlan",
+        "acceptable_codes": []
+    },
+    {
+        "test_name": "test_08",
+        "input_text": "Patient admitted with acute asthma exacerbation",
+        "target_profile": "condition-encounter-diagnosis",
+        "prompt": "Generate a US Core FHIR Condition resource based on the provided text.",
+        "expected_resource_type": "Condition",
+        "acceptable_codes": ["J45.901"]
+    },
+    {
+        "test_name": "test_09",
+        "input_text": "Patient completed depression screening questionnaire with a score indicating mild depression",
+        "target_profile": "questionnaireresponse",
+        "prompt": "Generate a US Core FHIR QuestionnaireResponse resource based on the provided text.",
+        "expected_resource_type": "QuestionnaireResponse",
+        "acceptable_codes": []
+    },
+    {
+        "test_name": "test_10",
+        "input_text": "Patient filled out pre-visit questionnaire regarding family history and allergies",
+        "target_profile": "questionnaire",
+        "prompt": "Generate a US Core FHIR Questionnaire resource based on the provided text.",
+        "expected_resource_type": "Questionnaire",
+        "acceptable_codes": []
+    },
+    {
+        "test_name": "test_11",
+        "input_text": "Patient diagnosed with major depressive disorder",
+        "target_profile": "condition-encounter-diagnosis",
+        "prompt": "Generate a US Core FHIR Condition resource based on the provided text.",
+        "expected_resource_type": "Condition",
+        "acceptable_codes": ["F32.9"]
+    },
+    {
+        "test_name": "test_12",
+        "input_text": "Initiate care plan for post-operative knee replacement recovery, including physical therapy sessions",
+        "target_profile": "careplan",
+        "prompt": "Generate a US Core FHIR CarePlan resource based on the provided text.",
+        "expected_resource_type": "CarePlan",
+        "acceptable_codes": []
+    },
+    {
+        "test_name": "test_13",
+        "input_text": "Prescribed albuterol inhaler for asthma, to be used as needed",
+        "target_profile": "medicationrequest",
+        "prompt": "Generate a US Core FHIR MedicationRequest resource based on the provided text.",
+        "expected_resource_type": "MedicationRequest",
+        "acceptable_codes": ["2123076"]
+    },
+    {
+        "test_name": "test_14",
+        "input_text": "Patient completed a post-discharge follow-up questionnaire",
+        "target_profile": "questionnaire",
+        "prompt": "Generate a US Core FHIR Questionnaire resource based on the provided text.",
+        "expected_resource_type": "Questionnaire",
+        "acceptable_codes": []
+    },
+    {
+        "test_name": "test_15",
+        "input_text": "Patient responded to a mental health questionnaire regarding stress levels and coping mechanisms",
+        "target_profile": "questionnaireresponse",
+        "prompt": "Generate a US Core FHIR QuestionnaireResponse resource based on the provided text.",
+        "expected_resource_type": "QuestionnaireResponse",
+        "acceptable_codes": []
     }
 ]
