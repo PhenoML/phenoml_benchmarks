@@ -4,20 +4,30 @@ This repository contains the code for benchmarking the FHIR generation capabilit
 
 ## Usage
 
+The benchmarking script can be used to benchmark the FHIR generation capabilities of various LLMs and PhenoML lang2FHIR. Test cases are defined in the `tests.json` file. Each test case contains a description of the test, the expected FHIR resource type, and expected codes (as relevant). The benchmarking script utilizes the publically available FHIR Validator API (https://validator.fhir.org/) to validate the generated FHIR resources against US Core IG. Test cases are designed to evaluate accuracy of FHIR resource generation, codes generated, and overall latency of the API call. 
+
 ### Prerequisites
 
 - Python 3.11+
 - pip
 - pip install -r requirements.txt
-- API keys for the LLMs and PhenoML lang2FHIR
+- API keys and credentials for the LLMs and PhenoML lang2FHIR
 
 ### Running the script
 
 ```bash
-python lang2fhir_benchmarking.py
+python3 lang2fhir_benchmarking.py
 ```
 
 ## Results
 
-Include results here
+Benchmarking results are saved in the `benchmark_results.json` file. The `benchmark_analysis.ipynb` file contains the code used to analyze the results with plots illustrating success rates and latency by API. In the current analysis, we see that while all APIs generate valid FHIR as evaluated by the public FHIR Validator,  PhenoML lang2FHIR model outperforms direct usage of major commercial AI APIs on code matching and outperforms Anthropic and OpenAI on latency. While commmercial AI APIs can generate accurate codes for some test cases, for less common codes they frequently hallucinate codes. Lang2FHIR currently utilizes Gemini as an LLM and we are now extending it to support Private LLM usage to enable completely private and secure FHIR generation. 
+
+## Future Work
+
+- Include more test cases and more comprehensive analysis
+- Benchmark lang2FHIR performance with private LLM usage
+- Include more LLM models and APIs in benchmarking
+
+
 

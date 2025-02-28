@@ -1,7 +1,7 @@
 [
     {
         "test_name": "test_01",
-        "input_text": "John Doe, male, born on January 1st, 1980",
+        "input_text": "John Doe, male, born on January 1st, 1980 with MRN 1234567890",
         "target_profile": "patient",
         "prompt": "Generate a US Core FHIR Patient resource based on the provided text.",
         "expected_resource_type": "Patient",
@@ -65,7 +65,7 @@
     },
     {
         "test_name": "test_09",
-        "input_text": "Patient filled out pre-visit questionnaire regarding family history and allergies",
+        "input_text": "Indicate your family history of diabetes, hypertension, and heart disease and any other relevant family history",
         "target_profile": "questionnaire",
         "prompt": "Generate a US Core FHIR Questionnaire resource based on the provided text.",
         "expected_resource_type": "Questionnaire",
@@ -97,7 +97,7 @@
     },
     {
         "test_name": "test_13",
-        "input_text": "Patient completed a post-discharge follow-up questionnaire",
+        "input_text": "Have you experienced any of the following symptoms in the past 24 hours: chest pain, shortness of breath, or pain in the left arm?",
         "target_profile": "questionnaire",
         "prompt": "Generate a US Core FHIR Questionnaire resource based on the provided text.",
         "expected_resource_type": "Questionnaire",
@@ -105,12 +105,43 @@
     },
     {
         "test_name": "test_14",
-        "input_text": "Patient responded to a mental health questionnaire regarding stress levels and coping mechanisms",
+        "input_text": "Patient reported the following in a form: Q: Feeling nervous, anxious, or on edge? A: More than half the days Q: Not being able to stop or control worrying? A: Several days",
         "target_profile": "questionnaireresponse",
         "prompt": "Generate a US Core FHIR QuestionnaireResponse resource based on the provided text.",
         "expected_resource_type": "QuestionnaireResponse",
         "acceptable_codes": []
-    } 
+    },
+    {
+        "test_name": "test_15",
+        "input_text": "Prescribed enbrel 50mg for rheumatoid arthritis",
+        "target_profile": "medicationrequest",
+        "prompt": "Generate a US Core FHIR MedicationRequest resource based on the provided text.",
+        "expected_resource_type": "MedicationRequest",
+        "acceptable_codes": ["802652", "2392142"]
+    },
+    {
+        "test_name": "test_16",
+        "input_text": "Patient diagnosed with bipolar type 2 disorder",
+        "target_profile": "condition-encounter-diagnosis",
+        "prompt": "Generate a US Core FHIR Condition resource based on the provided text.",
+        "expected_resource_type": "Condition",
+        "acceptable_codes": ["F31.81"]
+    }, 
+    {
+        "test_name": "test_17",
+        "input_text": "Prescribed Adderrall 5mg for ADHD",
+        "target_profile": "medicationrequest",
+        "prompt": "Generate a US Core FHIR MedicationRequest resource based on the provided text.",
+        "expected_resource_type": "MedicationRequest",
+        "acceptable_codes": ["541879"]
+    },
+    {
+        "test_name": "test_18",
+        "input_text": "Patient admitted with severe migraine",
+        "target_profile": "condition-encounter-diagnosis",
+        "prompt": "Generate a US Core FHIR Condition resource based on the provided text.",
+        "expected_resource_type": "Condition",
+        "acceptable_codes": ["G43"]
+    }
     
-
 ]

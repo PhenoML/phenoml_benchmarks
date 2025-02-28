@@ -13,7 +13,7 @@ load_dotenv('secrets.env')
 
 # Constants
 VALIDATOR_URL = "https://validator.fhir.org/validate"
-PHENOML_API_URL = "https://experiment.pheno.ml" # If you're on Experiment plan use this otherwise use your own PhenoML instance url
+PHENOML_API_URL = "https://experiment.pheno.ml" # If you're on Experiment plan use this otherwise use your own PhenoML instance url if you're on a Develop or Launch plan
 LLM_APIs = ["lang2FHIR", "OpenAI", "Anthropic", "Gemini"]
 
 ## Helper functions to call APIs
@@ -36,7 +36,7 @@ def get_phenoml_token():
     return response.json()['token']
 
 def call_phenoml_api(resource, input_text):
-    """Prepares payload and calls PhenoML lang2FHIRAPI to generate FHIR resource."""
+    """Prepares payload and calls PhenoML lang2FHIR API to generate FHIR resource."""
     start_time = time.time()
     token = get_phenoml_token()
     payload = {
@@ -222,9 +222,7 @@ def validate_fhir(resource):
                     "fileContent": json.dumps(resource),
                     "fileType": "json"
                 }
-            ],
-            #TODO: Add proper sessionId
-            "sessionId": "validation-session"
+            ]
         }
         
         response = requests.post(
@@ -248,23 +246,13 @@ def validate_fhir(resource):
 def is_fhir_valid(validation_result):
     """Checks if FHIR resource validation has only information/warning level issues."""
     if "issue" not in validation_result:
-        return True  # No issues = valid
+        return True  
 
-    # Filter issues by severity- only include errors and fatal issues
+    # Filter issues by severity- only include errors 
     error_issues = [
         issue for issue in validation_result["issue"] 
-        if issue.get("severity") in ["error", "fatal"]
+        if issue.get("severity") in ["error"]
     ]
-
-    # Add detailed logging for validation issues
-    if error_issues:
-        print("\nValidation errors found:")
-        for issue in error_issues:
-            print(f"- Severity: {issue.get('severity')}")
-            print(f"  Code: {issue.get('code')}")
-            print(f"  Details: {issue.get('diagnostics', 'No details provided')}")
-            print(f"  Location: {issue.get('location', ['No location'])}")
-            print()
 
     return len(error_issues) == 0
 
@@ -284,19 +272,18 @@ def codes_match_acceptable(generated_codes, acceptable_codes):
     # If codes were generated, they must all be in the acceptable list
     return generated_codes.issubset(acceptable_codes)
 
-# Update the results storage to include more validation details
-def store_validation_result(results, test, api, generated_fhir, validation_result, 
-                          is_valid, correct_type, codes_match, expected_codes, 
-                          generated_codes, latency):
-    """Helper function to store validation results with detailed information."""
+def create_validation_result(test, api, generated_fhir, validation_result, 
+                           is_valid, correct_type, codes_match, expected_codes, 
+                           generated_codes, latency):
+    """Creates and returns a validation result dictionary."""
     
-    # Extract error and fatal validation issues
+    # Extract error issues
     error_issues = [
         issue for issue in validation_result.get("issue", [])
-        if issue.get("severity", "unknown") in ["error", "fatal"]
+        if issue.get("severity", "unknown") in ["error"]
     ]
 
-    results.append({
+    return {
         "test_name": test["test_name"],
         "api": api,
         "valid_fhir": is_valid,
@@ -312,7 +299,7 @@ def store_validation_result(results, test, api, generated_fhir, validation_resul
         },
         "output_file": os.path.join(OUTPUT_DIR, api, f"{test['test_name']}.json"),
         "us_core_profile": f"http://hl7.org/fhir/us/core/StructureDefinition/us-core-{generated_fhir.get('resourceType', '').lower()}"
-    })
+    }
 
 ## Benchmarking Setup
 
@@ -350,19 +337,21 @@ for test in test_cases:
                 generated_codes = extract_codes_from_resource(generated_fhir)
                 codes_match = codes_match_acceptable(generated_codes, acceptable_codes)
                 
-                store_validation_result(
-                    results, test, api, generated_fhir, validation_result,
+                result = create_validation_result(
+                    test, api, generated_fhir, validation_result,
                     is_valid, correct_type, codes_match, acceptable_codes, 
                     generated_codes, latency
                 )
+                results.append(result)
             except Exception as e:
                 print(f"Error processing API {api}: {str(e)}")
                 # Store error result
-                store_validation_result(
-                    results, test, api, {"resourceType": "Unknown"}, 
+                result = create_validation_result(
+                    test, api, {"resourceType": "Unknown"}, 
                     {"issue": [{"severity": "error", "diagnostics": str(e)}]},
                     False, False, False, acceptable_codes, set(), 0
                 )
+                results.append(result)
     except Exception as e:
         print(f"Error processing test case {test.get('test_name', 'unknown')}: {str(e)}")
 
