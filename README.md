@@ -4,7 +4,7 @@ This repository contains the code for benchmarking the FHIR generation capabilit
 
 ## Usage
 
-The benchmarking script can be used to benchmark the FHIR generation capabilities of various LLMs and PhenoML lang2FHIR. Test cases are defined in the `tests.json` file. Each test case contains a description of the test, the expected FHIR resource type, and expected codes (as relevant). The benchmarking script utilizes the publically available FHIR Validator API (https://validator.fhir.org/) to validate the generated FHIR resources against US Core IG. Test cases are designed to evaluate accuracy of FHIR resource generation, codes generated, and overall latency of the API call. 
+The benchmarking script can be used to benchmark the FHIR generation capabilities of various LLMs and PhenoML lang2FHIR. Test cases are defined in the `tests.json` file. Each test case contains a description of the test, the expected FHIR resource type, and expected codes (as relevant). The benchmarking script utilizes the publically available [FHIR Validator API] (https://validator.fhir.org/) to validate the generated FHIR resources against US Core IG. Test cases are designed to evaluate accuracy of FHIR resource generation, codes generated, and overall latency of the API call. 
 
 ### Prerequisites
 
@@ -27,7 +27,7 @@ Benchmarking results are saved in the `benchmark_results.json` file. The `benchm
 
 - Include more test cases and more comprehensive analysis 
 - Benchmark lang2FHIR performance with private LLM usage
-- Evaluate lang2FHIR performance as part of an agentic workflow against clinical tasks from benchmarks such as MedAgentBench [https://github.com/MedAgentBench/MedAgentBench] and MedHELM [https://crfm.stanford.edu/helm/medhelm/latest/]
+- Evaluate lang2FHIR performance as part of an agentic workflow against clinical tasks from benchmarks such as [MedAgentBench](https://github.com/MedAgentBench/MedAgentBench) and [MedHELM](https://crfm.stanford.edu/helm/medhelm/latest/)
 - Include more LLM models and APIs in benchmarking
 
 
