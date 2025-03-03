@@ -21,7 +21,11 @@ python3 lang2fhir_benchmarking.py
 
 ## Results
 
-Benchmarking results are saved in the `benchmark_results.json` file. The `benchmark_analysis.ipynb` file contains the code used to analyze the results with plots illustrating success rates and latency by API. In the current analysis, we see that while all APIs generate valid FHIR as evaluated by the public FHIR Validator, PhenoML lang2FHIR API outperforms direct usage of major commercial AI APIs on code matching (100% success rate on the 18 test cases compared to approx 40-60% success rate for commercial APIs) and outperforms Anthropic and OpenAI on latency. While direct usage of LLM APIs can generate accurate codes for some test cases, for less common codes, code hallucination is probable. Lang2FHIR currently utilizes Gemini as an LLM and we are now extending it to support Private LLM usage to enable completely private FHIR generation. 
+Benchmarking results are saved in the `benchmark_results.json` file. The `benchmark_analysis.ipynb` file contains the code used to analyze the results with plots illustrating success rates and latency by API. 
+
+In the current analysis, we see that while all APIs generate valid FHIR as evaluated by the public FHIR Validator, PhenoML lang2FHIR API outperforms direct usage of major commercial AI APIs on code matching (100% success rate on the 18 test cases compared to approx 40-60% success rate for commercial APIs) and outperforms Anthropic and OpenAI on latency. 
+
+While direct usage of LLM APIs can generate accurate codes for some test cases, for less common codes, code hallucination is probable. Lang2FHIR currently utilizes Gemini as an LLM and we are now extending it to support Private LLM usage to enable completely private FHIR generation. 
 
 ![Benchmarking Results](output.png)
 Generation date: 2025-03-02 from `benchmark_analysis.ipynb` 
