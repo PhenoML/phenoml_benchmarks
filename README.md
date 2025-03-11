@@ -28,7 +28,7 @@ In the current analysis, we see that while all APIs generate valid FHIR as evalu
 While direct usage of LLM APIs can generate accurate codes for some test cases, for less common codes, code hallucination is probable. Lang2FHIR currently utilizes Gemini as an LLM and we are now extending it to support Private LLM usage to enable completely private FHIR generation. 
 
 ![Benchmarking Results](output.png)
-Generation date: 2025-03-02 from `benchmark_analysis.ipynb` 
+Generation date: 2025-03-11 from `benchmark_analysis.ipynb` 
 
 ## Future Work
 

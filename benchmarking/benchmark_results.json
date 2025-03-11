@@ -7,7 +7,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 2.2655599117279053,
+        "latency": 1.9374909400939941,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -24,7 +24,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 2.978510856628418,
+        "latency": 4.207994222640991,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -36,16 +36,22 @@
     {
         "test_name": "test_01",
         "api": "Anthropic",
-        "valid_fhir": true,
+        "valid_fhir": false,
         "correct_resource_type": true,
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 3.0989341735839844,
+        "latency": 3.5769290924072266,
         "validation_details": {
-            "total_issues": 0,
-            "error_count": 0,
-            "issues": []
+            "total_issues": 1,
+            "error_count": 1,
+            "issues": [
+                {
+                    "severity": "error",
+                    "code": "processing",
+                    "diagnostics": "Validation service error: HTTPSConnectionPool(host='validator.fhir.org', port=443): Read timed out. (read timeout=30)"
+                }
+            ]
         },
         "output_file": "generated_resources/Anthropic/test_01.json",
         "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient"
@@ -58,7 +64,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 1.1259231567382812,
+        "latency": 1.0231292247772217,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -80,7 +86,7 @@
         "generated_codes": [
             "E11"
         ],
-        "latency": 8.361490964889526,
+        "latency": 3.969503879547119,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -100,9 +106,9 @@
             "44054006"
         ],
         "generated_codes": [
-            "73211009"
+            "431855005"
         ],
-        "latency": 3.388943910598755,
+        "latency": 4.52786111831665,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -124,7 +130,7 @@
         "generated_codes": [
             "44054006"
         ],
-        "latency": 4.403905153274536,
+        "latency": 4.481249094009399,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -144,10 +150,9 @@
             "44054006"
         ],
         "generated_codes": [
-            "44054006",
             "E11"
         ],
-        "latency": 2.435445785522461,
+        "latency": 1.9486348628997803,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -169,7 +174,7 @@
         "generated_codes": [
             "861007"
         ],
-        "latency": 3.5998823642730713,
+        "latency": 3.7784347534179688,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -188,8 +193,10 @@
             "861007",
             "860975"
         ],
-        "generated_codes": [],
-        "latency": 6.352372884750366,
+        "generated_codes": [
+            "8501"
+        ],
+        "latency": 5.384517192840576,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -209,9 +216,9 @@
             "860975"
         ],
         "generated_codes": [
-            "861782"
+            "6809"
         ],
-        "latency": 3.9522578716278076,
+        "latency": 3.4520819187164307,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -233,7 +240,7 @@
         "generated_codes": [
             "6809"
         ],
-        "latency": 1.531313180923462,
+        "latency": 1.3543879985809326,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -255,7 +262,7 @@
         "generated_codes": [
             "5932-9"
         ],
-        "latency": 8.647334098815918,
+        "latency": 3.399869203567505,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -277,7 +284,7 @@
         "generated_codes": [
             "2093-3"
         ],
-        "latency": 5.441222190856934,
+        "latency": 8.024949789047241,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -290,23 +297,21 @@
         "test_name": "test_04",
         "api": "Anthropic",
         "valid_fhir": true,
-        "correct_resource_type": true,
-        "codes_match": true,
+        "correct_resource_type": false,
+        "codes_match": false,
         "expected_codes": [
             "5932-9",
             "2093-3"
         ],
-        "generated_codes": [
-            "2093-3"
-        ],
-        "latency": 2.8648109436035156,
+        "generated_codes": [],
+        "latency": 7.131500005722046,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
             "issues": []
         },
         "output_file": "generated_resources/Anthropic/test_04.json",
-        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation"
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-unknown"
     },
     {
         "test_name": "test_04",
@@ -321,7 +326,7 @@
         "generated_codes": [
             "2093-3"
         ],
-        "latency": 1.5364973545074463,
+        "latency": 0.9481201171875,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -342,7 +347,7 @@
         "generated_codes": [
             "314076"
         ],
-        "latency": 3.721133232116699,
+        "latency": 3.6094086170196533,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -361,9 +366,9 @@
             "314076"
         ],
         "generated_codes": [
-            "860975"
+            "1049630"
         ],
-        "latency": 5.020431995391846,
+        "latency": 3.796696901321411,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -384,7 +389,7 @@
         "generated_codes": [
             "314076"
         ],
-        "latency": 5.436075210571289,
+        "latency": 5.84649395942688,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -403,9 +408,9 @@
             "314076"
         ],
         "generated_codes": [
-            "6980"
+            "1191"
         ],
-        "latency": 2.4903600215911865,
+        "latency": 2.331378221511841,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -422,7 +427,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 2.714648962020874,
+        "latency": 2.902036190032959,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -439,7 +444,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 3.0940909385681152,
+        "latency": 10.544946908950806,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -456,7 +461,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 8.11932373046875,
+        "latency": 7.327735185623169,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -473,7 +478,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 3.9210011959075928,
+        "latency": 4.3103110790252686,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -494,7 +499,7 @@
         "generated_codes": [
             "J45.901"
         ],
-        "latency": 3.744266986846924,
+        "latency": 3.6645281314849854,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -513,9 +518,9 @@
             "J45.901"
         ],
         "generated_codes": [
-            "195967001"
+            "5553003"
         ],
-        "latency": 3.3331170082092285,
+        "latency": 3.928988218307495,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -534,9 +539,9 @@
             "J45.901"
         ],
         "generated_codes": [
-            "67415000"
+            "304527002"
         ],
-        "latency": 4.446787118911743,
+        "latency": 4.366335868835449,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -555,10 +560,10 @@
             "J45.901"
         ],
         "generated_codes": [
-            "J45.909",
-            "19597001"
+            "19597001",
+            "J45.909"
         ],
-        "latency": 2.4160938262939453,
+        "latency": 2.124502182006836,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -575,7 +580,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 2.007660150527954,
+        "latency": 1.7925541400909424,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -592,7 +597,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 5.840817928314209,
+        "latency": 9.296838998794556,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -609,7 +614,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 3.5142998695373535,
+        "latency": 3.452320098876953,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -626,7 +631,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 1.3867769241333008,
+        "latency": 1.1657826900482178,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -643,7 +648,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 2.5704381465911865,
+        "latency": 2.4066600799560547,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -660,7 +665,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 7.064887046813965,
+        "latency": 5.1231489181518555,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -677,7 +682,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 7.19869065284729,
+        "latency": 6.84839391708374,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -694,7 +699,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 2.251696825027466,
+        "latency": 2.7353270053863525,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -717,7 +722,7 @@
         "generated_codes": [
             "F33.9"
         ],
-        "latency": 3.6464881896972656,
+        "latency": 3.4359049797058105,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -738,9 +743,9 @@
             "370143000"
         ],
         "generated_codes": [
-            "431555"
+            "313.2"
         ],
-        "latency": 3.9148950576782227,
+        "latency": 2.653474807739258,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -763,7 +768,7 @@
         "generated_codes": [
             "370143000"
         ],
-        "latency": 5.356247901916504,
+        "latency": 4.965723276138306,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -784,9 +789,9 @@
             "370143000"
         ],
         "generated_codes": [
-            "F32.9"
+            "F33.9"
         ],
-        "latency": 2.0110018253326416,
+        "latency": 1.8444817066192627,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -803,7 +808,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 2.675429105758667,
+        "latency": 2.5637848377227783,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -820,7 +825,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 8.115352153778076,
+        "latency": 15.386234998703003,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -837,7 +842,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 7.808002948760986,
+        "latency": 5.018453121185303,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -854,7 +859,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 2.169154167175293,
+        "latency": 2.0854690074920654,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -876,7 +881,7 @@
         "generated_codes": [
             "2123111"
         ],
-        "latency": 3.7730040550231934,
+        "latency": 3.8184421062469482,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -896,9 +901,9 @@
             "2123111"
         ],
         "generated_codes": [
-            "19745"
+            "19846"
         ],
-        "latency": 4.211464881896973,
+        "latency": 5.122408151626587,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -918,9 +923,9 @@
             "2123111"
         ],
         "generated_codes": [
-            "347190"
+            "347177"
         ],
-        "latency": 6.992380142211914,
+        "latency": 6.384186029434204,
         "validation_details": {
             "total_issues": 1,
             "error_count": 1,
@@ -948,7 +953,7 @@
         "generated_codes": [
             "207182"
         ],
-        "latency": 2.1871531009674072,
+        "latency": 2.082594871520996,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -965,7 +970,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 2.3998520374298096,
+        "latency": 2.4363510608673096,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -982,7 +987,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 4.695767164230347,
+        "latency": 5.1864259243011475,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -999,7 +1004,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 3.5929830074310303,
+        "latency": 4.071631193161011,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -1016,7 +1021,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 1.6521680355072021,
+        "latency": 1.5458309650421143,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -1033,7 +1038,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 2.154165029525757,
+        "latency": 2.1275458335876465,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -1050,7 +1055,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 1.6886861324310303,
+        "latency": 4.503337144851685,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -1067,7 +1072,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 4.941493988037109,
+        "latency": 5.2345781326293945,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -1084,7 +1089,7 @@
         "codes_match": true,
         "expected_codes": [],
         "generated_codes": [],
-        "latency": 1.5985090732574463,
+        "latency": 1.5957350730895996,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -1106,7 +1111,7 @@
         "generated_codes": [
             "802652"
         ],
-        "latency": 3.833909034729004,
+        "latency": 3.710716962814331,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -1126,9 +1131,9 @@
             "2392142"
         ],
         "generated_codes": [
-            "83049"
+            "101796"
         ],
-        "latency": 4.2584803104400635,
+        "latency": 4.36026406288147,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -1150,7 +1155,7 @@
         "generated_codes": [
             "217442"
         ],
-        "latency": 5.086016893386841,
+        "latency": 5.019320011138916,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -1170,9 +1175,9 @@
             "2392142"
         ],
         "generated_codes": [
-            "28262"
+            "28416"
         ],
-        "latency": 2.2852442264556885,
+        "latency": 2.151536226272583,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -1193,7 +1198,7 @@
         "generated_codes": [
             "F31.81"
         ],
-        "latency": 3.5222079753875732,
+        "latency": 3.278656005859375,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -1214,7 +1219,7 @@
         "generated_codes": [
             "F31.81"
         ],
-        "latency": 4.9709203243255615,
+        "latency": 3.774312973022461,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -1233,9 +1238,9 @@
             "F31.81"
         ],
         "generated_codes": [
-            "191627008"
+            "44786002"
         ],
-        "latency": 5.789186000823975,
+        "latency": 4.210700750350952,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -1256,7 +1261,7 @@
         "generated_codes": [
             "303410005"
         ],
-        "latency": 1.9456028938293457,
+        "latency": 1.6301379203796387,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -1277,7 +1282,7 @@
         "generated_codes": [
             "541879"
         ],
-        "latency": 3.8679018020629883,
+        "latency": 3.998178005218506,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -1296,9 +1301,9 @@
             "541879"
         ],
         "generated_codes": [
-            "85010"
+            "860975"
         ],
-        "latency": 8.545561075210571,
+        "latency": 10.37968897819519,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -1317,9 +1322,9 @@
             "541879"
         ],
         "generated_codes": [
-            "703907"
+            "704170"
         ],
-        "latency": 5.582386255264282,
+        "latency": 6.179687023162842,
         "validation_details": {
             "total_issues": 1,
             "error_count": 1,
@@ -1344,9 +1349,9 @@
             "541879"
         ],
         "generated_codes": [
-            "203354"
+            "203353"
         ],
-        "latency": 2.2110328674316406,
+        "latency": 1.8465781211853027,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -1367,7 +1372,7 @@
         "generated_codes": [
             "G43"
         ],
-        "latency": 3.570420026779175,
+        "latency": 3.5774049758911133,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -1388,7 +1393,7 @@
         "generated_codes": [
             "431855005"
         ],
-        "latency": 9.215673685073853,
+        "latency": 6.091756820678711,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -1409,7 +1414,7 @@
         "generated_codes": [
             "56097005"
         ],
-        "latency": 5.529818058013916,
+        "latency": 5.246999979019165,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -1430,7 +1435,7 @@
         "generated_codes": [
             "377110008"
         ],
-        "latency": 1.9190759658813477,
+        "latency": 2.0478179454803467,
         "validation_details": {
             "total_issues": 0,
             "error_count": 0,
@@ -1438,5 +1443,1204 @@
         },
         "output_file": "generated_resources/Gemini/test_18.json",
         "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+    },
+    {
+        "test_name": "test_19",
+        "api": "lang2FHIR",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [
+            "309362"
+        ],
+        "generated_codes": [
+            "309362"
+        ],
+        "latency": 4.001168251037598,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/lang2FHIR/test_19.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_19",
+        "api": "OpenAI",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "309362"
+        ],
+        "generated_codes": [
+            "3074"
+        ],
+        "latency": 5.65434193611145,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/OpenAI/test_19.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_19",
+        "api": "Anthropic",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [
+            "309362"
+        ],
+        "generated_codes": [
+            "309362"
+        ],
+        "latency": 5.834945917129517,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Anthropic/test_19.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_19",
+        "api": "Gemini",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "309362"
+        ],
+        "generated_codes": [
+            "2752"
+        ],
+        "latency": 2.301172971725464,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Gemini/test_19.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_20",
+        "api": "lang2FHIR",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [
+            "F41.1"
+        ],
+        "generated_codes": [
+            "F41.1"
+        ],
+        "latency": 3.5758118629455566,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/lang2FHIR/test_20.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+    },
+    {
+        "test_name": "test_20",
+        "api": "OpenAI",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "F41.1"
+        ],
+        "generated_codes": [
+            "442100009104101"
+        ],
+        "latency": 2.8094229698181152,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/OpenAI/test_20.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+    },
+    {
+        "test_name": "test_20",
+        "api": "Anthropic",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "F41.1"
+        ],
+        "generated_codes": [
+            "190905008"
+        ],
+        "latency": 4.952615022659302,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Anthropic/test_20.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+    },
+    {
+        "test_name": "test_20",
+        "api": "Gemini",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [
+            "F41.1"
+        ],
+        "generated_codes": [
+            "F41.1"
+        ],
+        "latency": 1.6931991577148438,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Gemini/test_20.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+    },
+    {
+        "test_name": "test_21",
+        "api": "lang2FHIR",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [
+            "312961"
+        ],
+        "generated_codes": [
+            "312961"
+        ],
+        "latency": 3.909893274307251,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/lang2FHIR/test_21.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_21",
+        "api": "OpenAI",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "312961"
+        ],
+        "generated_codes": [
+            "198441"
+        ],
+        "latency": 12.426853895187378,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/OpenAI/test_21.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_21",
+        "api": "Anthropic",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [
+            "312961"
+        ],
+        "generated_codes": [
+            "312961"
+        ],
+        "latency": 6.048988103866577,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Anthropic/test_21.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_21",
+        "api": "Gemini",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "312961"
+        ],
+        "generated_codes": [
+            "855439"
+        ],
+        "latency": 2.6006102561950684,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Gemini/test_21.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_22",
+        "api": "lang2FHIR",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [
+            "74013-4"
+        ],
+        "generated_codes": [
+            "74013-4"
+        ],
+        "latency": 3.4783437252044678,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/lang2FHIR/test_22.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation"
+    },
+    {
+        "test_name": "test_22",
+        "api": "OpenAI",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "74013-4"
+        ],
+        "generated_codes": [
+            "59408-5"
+        ],
+        "latency": 3.750113010406494,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/OpenAI/test_22.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation"
+    },
+    {
+        "test_name": "test_22",
+        "api": "Anthropic",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "74013-4"
+        ],
+        "generated_codes": [
+            "425206005",
+            "74013-4"
+        ],
+        "latency": 3.9325900077819824,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Anthropic/test_22.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation"
+    },
+    {
+        "test_name": "test_22",
+        "api": "Gemini",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "74013-4"
+        ],
+        "generated_codes": [
+            "21908-9"
+        ],
+        "latency": 2.3610897064208984,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Gemini/test_22.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-observation"
+    },
+    {
+        "test_name": "test_23",
+        "api": "lang2FHIR",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [
+            "J44.9",
+            "13645005"
+        ],
+        "generated_codes": [
+            "J44.9"
+        ],
+        "latency": 3.430018901824951,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/lang2FHIR/test_23.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+    },
+    {
+        "test_name": "test_23",
+        "api": "OpenAI",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "J44.9",
+            "13645005"
+        ],
+        "generated_codes": [
+            "431855005"
+        ],
+        "latency": 2.968247175216675,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/OpenAI/test_23.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+    },
+    {
+        "test_name": "test_23",
+        "api": "Anthropic",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [
+            "J44.9",
+            "13645005"
+        ],
+        "generated_codes": [
+            "13645005"
+        ],
+        "latency": 4.366160154342651,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Anthropic/test_23.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+    },
+    {
+        "test_name": "test_23",
+        "api": "Gemini",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [
+            "J44.9",
+            "13645005"
+        ],
+        "generated_codes": [
+            "13645005"
+        ],
+        "latency": 1.7240257263183594,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Gemini/test_23.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+    },
+    {
+        "test_name": "test_24",
+        "api": "lang2FHIR",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [
+            "311041"
+        ],
+        "generated_codes": [
+            "311041"
+        ],
+        "latency": 3.6329567432403564,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/lang2FHIR/test_24.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_24",
+        "api": "OpenAI",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "311041"
+        ],
+        "generated_codes": [
+            "197091"
+        ],
+        "latency": 6.837042808532715,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/OpenAI/test_24.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_24",
+        "api": "Anthropic",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "311041"
+        ],
+        "generated_codes": [
+            "261551"
+        ],
+        "latency": 5.295372009277344,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Anthropic/test_24.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_24",
+        "api": "Gemini",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "311041"
+        ],
+        "generated_codes": [
+            "64748"
+        ],
+        "latency": 2.1784141063690186,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Gemini/test_24.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_25",
+        "api": "lang2FHIR",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [],
+        "generated_codes": [],
+        "latency": 1.752655029296875,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/lang2FHIR/test_25.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-questionnaire"
+    },
+    {
+        "test_name": "test_25",
+        "api": "OpenAI",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [],
+        "generated_codes": [],
+        "latency": 1.790266990661621,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/OpenAI/test_25.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-questionnaire"
+    },
+    {
+        "test_name": "test_25",
+        "api": "Anthropic",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [],
+        "generated_codes": [],
+        "latency": 2.3830909729003906,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Anthropic/test_25.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-questionnaire"
+    },
+    {
+        "test_name": "test_25",
+        "api": "Gemini",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [],
+        "generated_codes": [],
+        "latency": 1.0349879264831543,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Gemini/test_25.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-questionnaire"
+    },
+    {
+        "test_name": "test_26",
+        "api": "lang2FHIR",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [
+            "235959007",
+            "235595009",
+            "K21"
+        ],
+        "generated_codes": [
+            "K21"
+        ],
+        "latency": 3.254650831222534,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/lang2FHIR/test_26.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+    },
+    {
+        "test_name": "test_26",
+        "api": "OpenAI",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "235959007",
+            "235595009",
+            "K21"
+        ],
+        "generated_codes": [
+            "431855005"
+        ],
+        "latency": 3.8643460273742676,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/OpenAI/test_26.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+    },
+    {
+        "test_name": "test_26",
+        "api": "Anthropic",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "235959007",
+            "235595009",
+            "K21"
+        ],
+        "generated_codes": [
+            "K21.9",
+            "235595009"
+        ],
+        "latency": 6.246502876281738,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Anthropic/test_26.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+    },
+    {
+        "test_name": "test_26",
+        "api": "Gemini",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "235959007",
+            "235595009",
+            "K21"
+        ],
+        "generated_codes": [
+            "436460005"
+        ],
+        "latency": 1.616508960723877,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Gemini/test_26.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+    },
+    {
+        "test_name": "test_27",
+        "api": "lang2FHIR",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [
+            "208161"
+        ],
+        "generated_codes": [
+            "208161"
+        ],
+        "latency": 3.7354419231414795,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/lang2FHIR/test_27.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_27",
+        "api": "OpenAI",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "208161"
+        ],
+        "generated_codes": [
+            "856051"
+        ],
+        "latency": 12.293715000152588,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/OpenAI/test_27.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_27",
+        "api": "Anthropic",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "208161"
+        ],
+        "generated_codes": [
+            "312940"
+        ],
+        "latency": 5.776264190673828,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Anthropic/test_27.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_27",
+        "api": "Gemini",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "208161"
+        ],
+        "generated_codes": [
+            "20710"
+        ],
+        "latency": 1.0472352504730225,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Gemini/test_27.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_28",
+        "api": "lang2FHIR",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [
+            "310431"
+        ],
+        "generated_codes": [
+            "310431"
+        ],
+        "latency": 3.8272571563720703,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/lang2FHIR/test_28.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_28",
+        "api": "OpenAI",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "310431"
+        ],
+        "generated_codes": [
+            "850"
+        ],
+        "latency": 6.293373107910156,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/OpenAI/test_28.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_28",
+        "api": "Anthropic",
+        "valid_fhir": false,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "310431"
+        ],
+        "generated_codes": [
+            "196498"
+        ],
+        "latency": 5.63874626159668,
+        "validation_details": {
+            "total_issues": 1,
+            "error_count": 1,
+            "issues": [
+                {
+                    "severity": "error",
+                    "code": "processing",
+                    "diagnostics": "Validation service error: HTTPSConnectionPool(host='validator.fhir.org', port=443): Read timed out. (read timeout=30)"
+                }
+            ]
+        },
+        "output_file": "generated_resources/Anthropic/test_28.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_28",
+        "api": "Gemini",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "310431"
+        ],
+        "generated_codes": [
+            "256920"
+        ],
+        "latency": 2.638356924057007,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Gemini/test_28.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_29",
+        "api": "lang2FHIR",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [
+            "D50.9",
+            "87522002",
+            "D50"
+        ],
+        "generated_codes": [
+            "D50"
+        ],
+        "latency": 3.5643582344055176,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/lang2FHIR/test_29.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+    },
+    {
+        "test_name": "test_29",
+        "api": "OpenAI",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "D50.9",
+            "87522002",
+            "D50"
+        ],
+        "generated_codes": [
+            "431855005"
+        ],
+        "latency": 3.6266119480133057,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/OpenAI/test_29.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+    },
+    {
+        "test_name": "test_29",
+        "api": "Anthropic",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [
+            "D50.9",
+            "87522002",
+            "D50"
+        ],
+        "generated_codes": [
+            "87522002",
+            "D50.9"
+        ],
+        "latency": 5.3305299282073975,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Anthropic/test_29.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+    },
+    {
+        "test_name": "test_29",
+        "api": "Gemini",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "D50.9",
+            "87522002",
+            "D50"
+        ],
+        "generated_codes": [
+            "266915004"
+        ],
+        "latency": 1.7137770652770996,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Gemini/test_29.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+    },
+    {
+        "test_name": "test_30",
+        "api": "lang2FHIR",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [
+            "904431"
+        ],
+        "generated_codes": [
+            "904431"
+        ],
+        "latency": 3.4238340854644775,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/lang2FHIR/test_30.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_30",
+        "api": "OpenAI",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "904431"
+        ],
+        "generated_codes": [
+            "312949"
+        ],
+        "latency": 4.946156740188599,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/OpenAI/test_30.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_30",
+        "api": "Anthropic",
+        "valid_fhir": false,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [
+            "904431"
+        ],
+        "generated_codes": [
+            "904431"
+        ],
+        "latency": 6.622042894363403,
+        "validation_details": {
+            "total_issues": 1,
+            "error_count": 1,
+            "issues": [
+                {
+                    "severity": "error",
+                    "code": "processing",
+                    "diagnostics": "Validation service error: HTTPSConnectionPool(host='validator.fhir.org', port=443): Read timed out. (read timeout=30)"
+                }
+            ]
+        },
+        "output_file": "generated_resources/Anthropic/test_30.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_30",
+        "api": "Gemini",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "904431"
+        ],
+        "generated_codes": [
+            "205691"
+        ],
+        "latency": 2.0294389724731445,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Gemini/test_30.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_31",
+        "api": "lang2FHIR",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [
+            "M17",
+            "239873007"
+        ],
+        "generated_codes": [
+            "M17"
+        ],
+        "latency": 3.402480125427246,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/lang2FHIR/test_31.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+    },
+    {
+        "test_name": "test_31",
+        "api": "OpenAI",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "M17",
+            "239873007"
+        ],
+        "generated_codes": [
+            "431855005"
+        ],
+        "latency": 3.6922690868377686,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/OpenAI/test_31.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+    },
+    {
+        "test_name": "test_31",
+        "api": "Anthropic",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [
+            "M17",
+            "239873007"
+        ],
+        "generated_codes": [
+            "239873007"
+        ],
+        "latency": 4.598143100738525,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Anthropic/test_31.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+    },
+    {
+        "test_name": "test_31",
+        "api": "Gemini",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "M17",
+            "239873007"
+        ],
+        "generated_codes": [
+            "71531007"
+        ],
+        "latency": 1.6304130554199219,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Gemini/test_31.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-condition"
+    },
+    {
+        "test_name": "test_32",
+        "api": "lang2FHIR",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": true,
+        "expected_codes": [
+            "198145"
+        ],
+        "generated_codes": [
+            "198145"
+        ],
+        "latency": 3.801959753036499,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/lang2FHIR/test_32.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_32",
+        "api": "OpenAI",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "198145"
+        ],
+        "generated_codes": [
+            "197974"
+        ],
+        "latency": 5.722922086715698,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/OpenAI/test_32.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_32",
+        "api": "Anthropic",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "198145"
+        ],
+        "generated_codes": [
+            "312617"
+        ],
+        "latency": 5.947439908981323,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Anthropic/test_32.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
+    },
+    {
+        "test_name": "test_32",
+        "api": "Gemini",
+        "valid_fhir": true,
+        "correct_resource_type": true,
+        "codes_match": false,
+        "expected_codes": [
+            "198145"
+        ],
+        "generated_codes": [
+            "8991"
+        ],
+        "latency": 2.3124499320983887,
+        "validation_details": {
+            "total_issues": 0,
+            "error_count": 0,
+            "issues": []
+        },
+        "output_file": "generated_resources/Gemini/test_32.json",
+        "us_core_profile": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-medicationrequest"
     }
 ]

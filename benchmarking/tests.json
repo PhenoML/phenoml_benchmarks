@@ -142,6 +142,118 @@
         "prompt": "Generate a US Core FHIR Condition resource based on the provided text.",
         "expected_resource_type": "Condition",
         "acceptable_codes": ["G43"]
+    },
+    {
+        "test_name": "test_19",
+        "input_text": "Prescribed 75mg Clopidogrel for cardiovascular disease",
+        "target_profile": "medicationrequest",
+        "prompt": "Generate a US Core FHIR MedicationRequest resource based on the provided text.",
+        "expected_resource_type": "MedicationRequest",
+        "acceptable_codes": ["309362"]
+    },
+    {
+        "test_name": "test_20",
+        "input_text": "Patient diagnosed with generalized anxiety disorder",
+        "target_profile": "condition-encounter-diagnosis",
+        "prompt": "Generate a US Core FHIR Condition resource based on the provided text.",
+        "expected_resource_type": "Condition",
+        "acceptable_codes": ["F41.1"]
+    },
+    {
+        "test_name": "test_21",
+        "input_text": "Prescribed Simvastatin 20mg for hyperlipidemia",
+        "target_profile": "medicationrequest",
+        "prompt": "Generate a US Core FHIR MedicationRequest resource based on the provided text.",
+        "expected_resource_type": "MedicationRequest",
+        "acceptable_codes": ["312961"]
+    },
+    {
+        "test_name": "test_22",
+        "input_text": "Patient reports daily moderate alcohol consumption",
+        "target_profile": "simple-observation",
+        "prompt": "Generate a US Core FHIR Observation resource based on the provided text.",
+        "expected_resource_type": "Observation",
+        "acceptable_codes": ["74013-4"]
+    },
+    {
+        "test_name": "test_23",
+        "input_text": "Patient diagnosed with chronic obstructive pulmonary disease (COPD)",
+        "target_profile": "condition-encounter-diagnosis",
+        "prompt": "Generate a US Core FHIR Condition resource based on the provided text.",
+        "expected_resource_type": "Condition",
+        "acceptable_codes": ["J44.9", "13645005"]
+    },
+    {
+        "test_name": "test_24",
+        "input_text": "Prescribed insulin glargine 10 units subcutaneously at bedtime",
+        "target_profile": "medicationrequest",
+        "prompt": "Generate a US Core FHIR MedicationRequest resource based on the provided text.",
+        "expected_resource_type": "MedicationRequest",
+        "acceptable_codes": ["311041"]
+    },
+    {
+        "test_name": "test_25",
+        "input_text": "Have you experienced unexplained weight loss in the past month?",
+        "target_profile": "questionnaire",
+        "prompt": "Generate a US Core FHIR Questionnaire resource based on the provided text.",
+        "expected_resource_type": "Questionnaire",
+        "acceptable_codes": []
+    },
+    {
+        "test_name": "test_26",
+        "input_text": "Patient diagnosed with gastroesophageal reflux disease (GERD)",
+        "target_profile": "condition-encounter-diagnosis",
+        "prompt": "Generate a US Core FHIR Condition resource based on the provided text.",
+        "expected_resource_type": "Condition",
+        "acceptable_codes": ["235959007", "235595009", "K21"]
+    },
+    {
+        "test_name": "test_27",
+        "input_text": "Prescribed sertraline 50mg for depression",
+        "target_profile": "medicationrequest",
+        "prompt": "Generate a US Core FHIR MedicationRequest resource based on the provided text.",
+        "expected_resource_type": "MedicationRequest",
+        "acceptable_codes": ["208161"]
+    },
+    {
+        "test_name": "test_28",
+        "input_text": "Prescribed gabapentin 300mg for neuropathic pain",
+        "target_profile": "medicationrequest",
+        "prompt": "Generate a US Core FHIR MedicationRequest resource based on the provided text.",
+        "expected_resource_type": "MedicationRequest",
+        "acceptable_codes": ["310431"]
+    },
+    {
+        "test_name": "test_29",
+        "input_text": "Patient diagnosed with iron deficiency anemia",
+        "target_profile": "condition-encounter-diagnosis",
+        "prompt": "Generate a US Core FHIR Condition resource based on the provided text.",
+        "expected_resource_type": "Condition",
+        "acceptable_codes": ["D50.9", "87522002", "D50"]
+    },
+    {
+        "test_name": "test_30",
+        "input_text": "Prescribed alendronate 70mg once weekly for osteoporosis",
+        "target_profile": "medicationrequest",
+        "prompt": "Generate a US Core FHIR MedicationRequest resource based on the provided text.",
+        "expected_resource_type": "MedicationRequest",
+        "acceptable_codes": ["904431"]
+    },
+    {
+        "test_name": "test_31",
+        "input_text": "Patient diagnosed with osteoarthritis of the knee",
+        "target_profile": "condition-encounter-diagnosis",
+        "prompt": "Generate a US Core FHIR Condition resource based on the provided text.",
+        "expected_resource_type": "Condition",
+        "acceptable_codes": ["M17", "239873007"]
+    },
+    {
+        "test_name": "test_32",
+        "input_text": "Prescribed prednisone 10mg daily for rheumatoid arthritis",
+        "target_profile": "medicationrequest",
+        "prompt": "Generate a US Core FHIR MedicationRequest resource based on the provided text.",
+        "expected_resource_type": "MedicationRequest",
+        "acceptable_codes": ["198145"]
     }
-    
+          
 ]
