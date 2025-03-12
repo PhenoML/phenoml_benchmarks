@@ -11,7 +11,7 @@ This benchmarking script can be used to benchmark the FHIR generation capabiliti
 - Python 3.11+
 - pip
 - pip install -r requirements.txt
-- API keys and credentials for the LLMs and PhenoML lang2FHIR
+- API keys and credentials for the LLMs and PhenoML lang2FHIR (sign up for lang2FHIR API access [here](https://developer.pheno.ml))
 
 ### Running the script
 
@@ -36,6 +36,10 @@ Generation date: 2025-03-11 from `benchmark_analysis.ipynb`
 - Benchmark lang2FHIR performance with private LLM usage
 - Evaluate lang2FHIR performance as part of an agentic workflow against clinical tasks from benchmarks such as [MedAgentBench](https://github.com/MedAgentBench/MedAgentBench) and [MedHELM](https://crfm.stanford.edu/helm/medhelm/latest/) and FHIR tasks from eval frameworks such as [Flexpa's LLM FHIR Eval](https://github.com/flexpa/llm-fhir-eval)
 - Include more LLM models and APIs in benchmarking
+
+##  Additional Information
+
+FHIR® is a registered trademark of HL7.
 
 
 
