@@ -21,11 +21,11 @@ python3 lang2fhir_benchmarking.py
 
 ## Results
 
-Benchmarking results are saved in the `benchmark_results.json` file. The `benchmark_analysis.ipynb` file contains the code used to analyze the results with plots illustrating success rates and latency by API. 
+Benchmarking results are saved in the `benchmark_results.json` file. The `benchmark_analysis.ipynb` file contains the code used to analyze the results with plots illustrating success rates and latency by API. Anthropic's Claude 3.5 Sonnet v2, OpenAI's GPT-4o-mini, and Google's Gemini 2.0 Flash were evaluated with PhenoML lang2FHIR API to provide a comprehensive comparison from a latency and performance perspective.
 
-In the current analysis, we see that while all APIs generate valid FHIR as evaluated by the public FHIR Validator, PhenoML lang2FHIR API outperforms direct usage of major commercial AI APIs on code matching (100% success rate on the 32 test cases compared to approx 30-60% success rate for commercial APIs) and outperforms Anthropic and OpenAI on latency. 
+In the current analysis, we see that while all APIs generate valid FHIR as evaluated by the public FHIR Validator, PhenoML lang2FHIR API outperforms direct usage of major commercial AI APIs on code matching (100% success rate on the 32 test cases compared to approx 30-60% success rate for commercial APIs) and outperforms Anthropic and OpenAI on latency.  
 
-While direct usage of LLM APIs can generate accurate codes for some test cases, for less common codes, code hallucination is probable. Lang2FHIR currently utilizes Gemini as an LLM and we are now extending it to support Private LLM usage (via Ollama) to enable completely private FHIR generation and language powered healthcare workflows. 
+While direct usage of LLM APIs can generate accurate codes for some test cases, for less common codes, code hallucination is probable. Lang2FHIR currently utilizes Gemini 2.0 Flash as an LLM within the overall system and we are now extending lang2FHIR to support Private LLM usage (via Ollama); enabling completely private FHIR generation and language powered healthcare workflows. 
 
 ![Benchmarking Results](output.png)
 Generation date: 2025-03-11 from `benchmark_analysis.ipynb` 
