@@ -13,7 +13,7 @@ load_dotenv('secrets.env')
 
 # Constants
 VALIDATOR_URL = "https://validator.fhir.org/validate"
-PHENOML_API_URL = "https://experiment.pheno.ml" # If you're on Experiment plan use this otherwise use your own PhenoML instance url if you're on a Develop or Launch plan
+PHENOML_API_URL = "https://experiment.app.pheno.ml" # If you're on Experiment plan use this otherwise use your own PhenoML instance url if you're on a Develop or Launch plan
 LLM_APIs = ["lang2FHIR", "OpenAI", "Anthropic", "Gemini"]
 
 ## Helper functions to call APIs
