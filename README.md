@@ -11,7 +11,7 @@ This benchmarking script can be used to benchmark the FHIR generation capabiliti
 - Python 3.11+
 - pip
 - pip install -r requirements.txt
-- API keys and credentials for the LLMs and PhenoML lang2FHIR (sign up for lang2FHIR API access [here](https://console.pheno.ml/docs/guides/quickstart))
+- API keys and credentials for the LLMs and PhenoML lang2FHIR (sign up for lang2FHIR API access [here](https://console.pheno.ml/docs))
 
 ### Running the script
 
